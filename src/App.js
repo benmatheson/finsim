@@ -27,6 +27,20 @@ export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = { asset: 50, yrs: 45, startingAmount: 1000 };
+    // this.setTimeout = this.setTimeout.bind(this);
+  }
+
+  componentdidMount() {
+    setTimeout(() => {
+      this.setState({ asset: 99, yrs: 45, startingAmount: 1000 }), 500;
+    });
+
+    setTimeout(() => {
+      this.setState({ asset: 20, yrs: 45, startingAmount: 1000 }), 1000;
+    });
+    setTimeout(() => {
+      this.setState({ asset: 99, yrs: 1, startingAmount: 1000 }), 1500;
+    });
   }
 
   handleStateChange = (e, st) => {

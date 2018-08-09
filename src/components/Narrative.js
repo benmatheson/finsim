@@ -21,18 +21,18 @@ export default class Narrative extends React.Component {
 
 		const alloOutN = setAssetAllocation(this.props.asset);
 
-		console.table(this.props.realData);
+		// console.table(this.props.realData);
 		const dataPositive = this.props.realData.filter(
 			(d, i) => d[d.length - 1] > d[0]
 		);
 
-		console.table(dataPositive);
+		// console.table(dataPositive);
 		const dataPositiveLength = dataPositive.length;
 		const dataNegativeLength =
 			this.props.realData.length - dataPositiveLength;
 
-		console.log("THE LENGTH");
-		console.log(dataPositiveLength);
+		// console.log("THE LENGTH");
+		// console.log(dataPositiveLength);
 
 		// const flattenedData = [].concat(...data);
 		// const maxValue = Math.max(...flattenedData);
@@ -59,6 +59,29 @@ export default class Narrative extends React.Component {
 
 		return (
 			<p className="center narrative">
+				<strong>
+					Asset allocation:<br />
+					<br />
+				</strong>
+				<span className="assetSpan">
+					<span className="uniqueSpan billsHighlight">
+						{parseFloat(alloOutN.bills).toFixed(1)}
+						%
+					</span>{" "}
+					treasury bills
+					<span className="uniqueSpan bondsHighlight">
+						{` ${parseFloat(alloOutN.bonds).toFixed(1)}`}
+						%
+					</span>{" "}
+					bonds
+					<span className="uniqueSpan stocksHighlight">
+						{parseFloat(alloOutN.stocks).toFixed(1)}
+						%
+					</span>{" "}
+					stocks
+				</span>
+				<br />
+				<br />
 				There have been{" "}
 				<span className="uniqueSpan">
 					{" "}
@@ -70,16 +93,6 @@ export default class Narrative extends React.Component {
 				</span>{" "}
 				periods since 1928.<br />
 				<br />
-				With your {} asset allocation of
-				<span className="uniqueSpan stocksHighlight">
-					{parseFloat(alloOutN.stocks).toFixed(1)}
-				</span>% stocks,<br />
-				<span className="uniqueSpan bondsHighlight">
-					{` ${parseFloat(alloOutN.bonds).toFixed(1)}`}
-				</span>% bonds, and
-				<span className="uniqueSpan billsHighlight">
-					{parseFloat(alloOutN.bills).toFixed(1)}
-				</span>% treasury bills
 				<span className="uniqueSpan">{dataPositiveLength}</span> have
 				been positive, and
 				<span className="uniqueSpan negative">

@@ -14,12 +14,61 @@ export default class Chart extends React.Component {
 		// // console.log(data[0].length);
 		// console.log(minValue);
 
+		var cWidth = 100;
+
+		function set_vars() {
+			//alert('setting vars')
+			const current_width = window.innerWidth;
+			const current_height = window.innerHeight;
+
+			// current_ratio = current_width / current_height;
+
+			// // Check if height is limiting factor
+			// if ( current_ratio > default_ratio ){
+			//   h = current_height;
+			//   w = h * default_ratio;
+			// // Else width is limiting
+			// } else {
+			//   w = current_width;
+			//   h = w / default_ratio;
+			// }
+
+			// Set new width and height based on graph dimensions
+			// width = w - margin.left - margin.right;
+			// height = h - margin.top - margin.bottom;
+
+			if (current_width < 668) {
+				cWidth = current_width;
+			} else {
+				cWidth = 800;
+			}
+		}
+
+		set_vars();
+
+		console.log("CWIDTH");
+		console.log(cWidth);
+
+		// var resizeTimer;
+		// window.onresize = function(event) {
+		//  clearTimeout(resizeTimer);
+		//   resizeTimer = setTimeout(function()
+		//   {
+		//     // var s = d3.selectAll('svg');
+		//     // s = s.remove();
+
+		//     this.node.remove();
+		//     set_vars();
+		//     // drawGraphic();
+		//   }, 100);
+		// }
+
 		const domy = data[0].length;
 		console.log(domy);
 		const scaleX = d3
 			.scaleLinear()
 			.domain([1, data[0].length])
-			.range([0, 500]);
+			.range([0, cWidth]);
 
 		const scaleY = d3
 			.scaleLinear()
@@ -68,7 +117,7 @@ export default class Chart extends React.Component {
 		// const xAxisCall = xAxis.call();
 		return (
 			<div>
-				<svg className="mainSvg" width={500} height={300}>
+				<svg className="mainSvg" width={cWidth} height={300}>
 					{lineMapped}
 				</svg>
 			</div>

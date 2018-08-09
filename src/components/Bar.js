@@ -8,15 +8,15 @@ export default class Bar extends React.Component {
 	render() {
 		const alloData = setAssetAllocationBar(this.props.asset);
 
-		console.log(alloData);
+		// console.log(alloData);
 
-		console.log("ALLODTA");
+		// console.log("ALLODTA");
 
 		const { stocks, bonds, bills } = alloData;
 		// console.log(stocks + "ROCKS");
 
 		const alloDataArr = [bills, bonds, stocks];
-		console.log(alloDataArr);
+		// console.log(alloDataArr);
 
 		const barLength = 300;
 
@@ -35,7 +35,7 @@ export default class Bar extends React.Component {
 			.scaleOrdinal()
 			// .interpolate(d3.interpolateHcl)
 			// .domain([1, 3])
-			.range([d3.rgb("#91bfdb"), d3.rgb("#e0f3f8"), d3.rgb("#fc8d59")]);
+			.range([d3.rgb("#e0f3f8"), d3.rgb("#91bfdb"), d3.rgb("#fc8d59")]);
 
 		const scaleColor = d3.scaleOrdinal(d3.schemePaired);
 		// const line = d3
@@ -59,7 +59,7 @@ export default class Bar extends React.Component {
 							? barLength - scaleXBar(j)
 							: scaleXBar(alloDataArr[i - 1])
 					}
-					y={20}
+					y={0}
 					fill={unqColor(i)}
 				/>
 			);
@@ -89,7 +89,7 @@ export default class Bar extends React.Component {
 					className="mainSvg center"
 					preserveAspectRatio="xMidYMin"
 					width={barLength}
-					height={40}
+					height={30}
 				>
 					{barGenerate}
 				</svg>

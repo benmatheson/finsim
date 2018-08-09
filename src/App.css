@@ -18,12 +18,13 @@ h2 {
 
 .lineStyle {
   /*stroke-color: salmon;*/
-  opacity: 0.2;
+  opacity: 0.3;
   stroke-width: 1.8px;
   fill: none;
   /*stroke-dasharray: 1;*/
   /*fill: red;*/
-  stroke: seagreen;
+  stroke-linecap: round;
+  stroke: #4dabc7;
 }
 
 .lineStyleMedian {
@@ -42,15 +43,16 @@ h2 {
   margin: 0 auto;
   display: block;
   height: auto;
+  /*background-color: white;*/
 }
 
 input {
   display: block;
-  width: 50%;
+  width: 90%;
 }
 
 .slider {
-  width: 90%;
+  width: 100%;
   /*background-color: pink;*/
 
   background-color: #ffffff;
@@ -59,7 +61,7 @@ input {
   /*background-color: whitesmoke;*/
   /*box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);*/
 
-  padding: 2%;
+  padding: 1%;
 }
 
 input[type="range"]::-webkit-slider-runnable-track {
@@ -92,13 +94,16 @@ input[type="range"]::-webkit-slider-thumb {
   color: black;
   /*background-color: lightgreen;*/
   font-weight: 900;
-  font-size: 1.6rem;
+  font-size: 1.4rem;
   padding-left: 1.5%;
   padding-right: 1.5%;
   border-radius: 3px;
   /*max-width: */
 }
 
+.assetSpan {
+  font-size: 1.1rem;
+}
 .stocksHighlight {
   background-color: #fc8d59;
 }
@@ -121,9 +126,12 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 .narrative {
-  width: 500px;
+  width: 70%;
+  /*  margin-left: 20%;
+  margin-right: 20%;*/
   text-align: left;
   font-size: 1.4rem;
+  text-align: center;
 }
 
 /*.App-logo {
@@ -152,5 +160,26 @@ input[type="range"]::-webkit-slider-thumb {
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+/*@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {*/
+
+@media only screen and (max-device-width: 667px) {
+  .narrative {
+    width: 90%;
+    text-align: left;
+    /*background-color: yellow;*/
+    /*padding: 0px 10px 0px 10px;*/
+    /*font-size: 9.4rem;*/
+    /*text-decoration: underline;*/
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  input {
+    overflow-x: hidden !important;
   }
 }
