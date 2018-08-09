@@ -30,18 +30,18 @@ export default class App extends Component {
     // this.setTimeout = this.setTimeout.bind(this);
   }
 
-  componentdidMount() {
-    setTimeout(() => {
-      this.setState({ asset: 99, yrs: 45, startingAmount: 1000 }), 500;
-    });
+  // componentdidMount() {
+  //   setTimeout(() => {
+  //     this.setState({ asset: 99, yrs: 45, startingAmount: 1000 }), 500;
+  //   });
 
-    setTimeout(() => {
-      this.setState({ asset: 20, yrs: 45, startingAmount: 1000 }), 1000;
-    });
-    setTimeout(() => {
-      this.setState({ asset: 99, yrs: 1, startingAmount: 1000 }), 1500;
-    });
-  }
+  //   setTimeout(() => {
+  //     this.setState({ asset: 20, yrs: 45, startingAmount: 1000 }), 1000;
+  //   });
+  //   setTimeout(() => {
+  //     this.setState({ asset: 99, yrs: 1, startingAmount: 1000 }), 1500;
+  //   });
+  // }
 
   handleStateChange = (e, st) => {
     const settings = e;
@@ -65,7 +65,10 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>The Small Sample Size of Market History</h1>
-
+        <h3 className="subHeader center">
+          Out modern financial markets are not very old. Explore how $10,000
+          performs across every time period and among a mix of assets.{" "}
+        </h3>
         <Chart
           years={this.state.yrs}
           sa={this.state.startingAmount}
@@ -75,8 +78,6 @@ export default class App extends Component {
             this.state.yrs
           )}
         />
-        <Bar asset={this.state.asset} />
-
         <div />
         <Picker
           handleChange={this.handleStateChange}
@@ -86,7 +87,6 @@ export default class App extends Component {
             this.state.yrs
           )}
         />
-
         <Narrative
           years={this.state.yrs}
           asset={this.state.asset}
@@ -96,6 +96,7 @@ export default class App extends Component {
             this.state.yrs
           )}
         />
+        <Bar asset={this.state.asset} />
       </div>
     );
   }

@@ -9,11 +9,18 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "roboto";
   /*font-family: monospace;*/
   color: #111111;
   font-weight: 900;
+  /*text-align: left;*/
+}
+
+.subHeader {
+  font-weight: 300;
+  width: 50%;
 }
 
 .lineStyle {
@@ -48,7 +55,7 @@ h2 {
 
 input {
   display: block;
-  width: 90%;
+  width: 50%;
 }
 
 .slider {
@@ -89,6 +96,20 @@ input[type="range"]::-webkit-slider-thumb {
 }
 
 /*.range([d3.rgb("#91bfdb"), d3.rgb("#e0f3f8"), d3.rgb("#fc8d59")]);*/
+
+.sliderFlex {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.sliderFlexItem {
+  font-size: 1.1rem;
+  color: #444;
+  padding-bottom: 5px;
+  padding-top: 5px;
+  font-style: italic;
+}
 
 .uniqueSpan {
   color: black;
@@ -181,5 +202,6 @@ input[type="range"]::-webkit-slider-thumb {
 
   input {
     overflow-x: hidden !important;
+    width: 90%;
   }
 }

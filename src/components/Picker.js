@@ -8,20 +8,20 @@ class Picker extends React.Component {
 
 	assetRef = React.createRef();
 
-	onAsset = e => {
-		// const currentAsset = this.assetRef.current.value;
-		const val = parseInt(e.target.value);
-
-		console.log(val);
-		this.props.handleChange(val, "asset");
-	};
-
 	onYears = e => {
 		const val = parseInt(e.target.value);
 
 		const currentYears = e.target.value;
 		console.log(currentYears);
 		this.props.handleChange(val, "yrs");
+	};
+
+	onAsset = e => {
+		// const currentAsset = this.assetRef.current.value;
+		const val = parseInt(e.target.value);
+
+		console.log(val);
+		this.props.handleChange(val, "asset");
 	};
 
 	onAmount = e => {
@@ -35,18 +35,7 @@ class Picker extends React.Component {
 	render() {
 		return (
 			<div className="center slider">
-				<h2> Risk Tolerance </h2>
-				<h3>{}</h3>
-				<input
-					className="center"
-					type="range"
-					name="points"
-					min="1"
-					max="100"
-					onChange={this.onAsset}
-				/>
-
-				<h2> Number of Years Invested </h2>
+				<h3> Number of Years Invested </h3>
 
 				<input
 					className="center"
@@ -56,6 +45,28 @@ class Picker extends React.Component {
 					max="90"
 					onChange={this.onYears}
 				/>
+
+				<div className="sliderFlex center">
+					<div className="sliderFlexItem">2 years</div>
+					<div className="sliderFlexItem">50 years</div>
+					<div className="sliderFlexItem">90 years</div>
+				</div>
+
+				<h3> Risk Tolerance </h3>
+				<input
+					className="center"
+					type="range"
+					name="points"
+					min="1"
+					max="100"
+					onChange={this.onAsset}
+				/>
+
+				<div className="sliderFlex center">
+					<div className="sliderFlexItem">Least Risk</div>
+					<div className="sliderFlexItem">Moderate</div>
+					<div className="sliderFlexItem">Highest Risk</div>
+				</div>
 			</div>
 		);
 	}

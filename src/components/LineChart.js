@@ -3,6 +3,18 @@ import * as d3 from "d3";
 import "../App.css";
 
 export default class Chart extends React.Component {
+	constructor(props) {
+		super(props);
+		this.handleHover = this.handleHover.bind(this);
+	}
+
+	handleHover(e) {
+		// console.log(e.target.value);
+		console.log("hovering");
+		e.preventDefault();
+		return "yo";
+	}
+
 	render() {
 		const data = this.props.realData;
 
@@ -93,7 +105,14 @@ export default class Chart extends React.Component {
 			} else {
 				style1 = "lineStyleMedian";
 			}
-			return <path key={i} className={style1} d={line(j)} />;
+			return (
+				<path
+					// onMouseOver={this.handleHover}
+					key={i}
+					className={style1}
+					d={line(j)}
+				/>
+			);
 		});
 
 		const dataSorted = data.sort(
