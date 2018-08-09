@@ -41,7 +41,8 @@ class Picker extends React.Component {
 					className="center"
 					type="range"
 					name="points"
-					min="2"
+					min="1"
+					step="1"
 					max="90"
 					onChange={this.onYears}
 				/>
@@ -57,6 +58,7 @@ class Picker extends React.Component {
 					className="center"
 					type="range"
 					name="points"
+					step="1"
 					min="1"
 					max="100"
 					onChange={this.onAsset}
