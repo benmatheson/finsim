@@ -25,12 +25,21 @@ function devArrays(years) {
 	const historicArray = historicData.map(
 		(d, i) => historicData.slice(i, i + years) //end at end
 	); //gives array of returhs
+	// console.log("HISTORIc");
 	// console.log(historicArray);
 	// console.log("historicArray");
 
 	// console.log(years * -1);
-	const negativeYears = years * -1 + 1;
-	historicArray.splice(negativeYears);
+
+	const negativeYears = years * -1 + 1; ///what is this?
+	// console.log("negativeYears");
+	// console.log(negativeYears);
+
+	if (years != 1) {
+		historicArray.splice(negativeYears);
+	}
+	// console.log("SPLICED?");
+	// console.log(historicArray);
 
 	return historicArray;
 }
@@ -88,12 +97,12 @@ function masterFunction(allo, amt, yrs) {
 
 	function setAssetAllocation(allocation) {
 		var stx = Math.floor(allocation) / 100;
-		var bnds = (100 - allocation) / 2 / 100;
-		var bls = (100 - allocation) / 2 / 100;
+		var bnds = ((100 - allocation) * 0.75) / 100;
+		var bls = ((100 - allocation) * 0.25) / 100;
 
-		console.log("stx        " + stx);
-		console.log("nbds       " + bnds);
-		console.log("billsx     " + bls);
+		// console.log("stx        " + stx);
+		// console.log("nbds       " + bnds);
+		// console.log("billsx     " + bls);
 		return {
 			stocks: stx,
 			bonds: bnds,
@@ -139,9 +148,9 @@ function setAssetAllocationBar(allocation) {
 	var bnds = (100 - allocation) / 2 / 100;
 	var bls = (100 - allocation) / 2 / 100;
 
-	console.log("stx        " + stx);
-	console.log("nbds       " + bnds);
-	console.log("billsx     " + bls);
+	// console.log("stx        " + stx);
+	// console.log("nbds       " + bnds);
+	// console.log("billsx     " + bls);
 	return {
 		stocks: stx,
 		bonds: bnds,

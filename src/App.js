@@ -7,6 +7,7 @@ import "typeface-roboto";
 import Chart from "./components/LineChart";
 import Bar from "./components/Bar";
 import Narrative from "./components/Narrative";
+import Asset from "./components/Asset";
 
 ///functionality
 
@@ -26,7 +27,7 @@ import Narrative from "./components/Narrative";
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { asset: 50, yrs: 45, startingAmount: 1000 };
+    this.state = { asset: 50, yrs: 30, startingAmount: 10000, xy: {},finalValue:{} };
     // this.setTimeout = this.setTimeout.bind(this);
   }
 
@@ -48,6 +49,20 @@ export default class App extends Component {
     this.setState({ [st]: settings });
   };
 
+  lineHoverMethod = xy => {
+    // const settings = e;
+    this.setState({ xy: xy });
+    // this.setState({ xy: xy });
+  };
+
+  // componentdidMount() {
+  //   setInterval(() => {
+  //     console.log("moutnigned");
+  //     this.setState({ asset: 20, yrs: 5, startingAmount: 1000 });
+  //     });
+  //   }, 1000);
+  // }
+
   // componentDidUpdate(prevState) {
   //   // Typical usage (don't forget to compare props):
   //   // if (this.state.startingAmount !== prevState.startingAmount) {
@@ -65,29 +80,29 @@ export default class App extends Component {
     return (
       <div className="App">
         <h1>The Small Sample Size of Market History</h1>
-        <h3 className="subHeader center">
-          Out modern financial markets are not very old. Explore how $10,000
-          performs across every time period and among a mix of assets.{" "}
+        <h3 className="center subHeader">
+          Our modern financial markets are not very old. <br /><br />Explore 
+          how every historical time period since 1928 compares to each other and differs among portfolios of assets. Each line
+          represents the <strong>performance of $10,000</strong> over every possible time period
+          of <strong>a given length.</strong>
         </h3>
+
+     
+
         <Chart
           years={this.state.yrs}
           sa={this.state.startingAmount}
+          xy={this.state.xy}
           realData={masterFunction(
             this.state.asset,
             this.state.startingAmount,
             this.state.yrs
           )}
+          lineHover={this.lineHoverMethod}
         />
         <div />
-        <Picker
-          handleChange={this.handleStateChange}
-          realData={masterFunction(
-            this.state.asset,
-            this.state.startingAmount,
-            this.state.yrs
-          )}
-        />
-        <Narrative
+
+            <Narrative
           years={this.state.yrs}
           asset={this.state.asset}
           realData={masterFunction(
@@ -96,7 +111,26 @@ export default class App extends Component {
             this.state.yrs
           )}
         />
-        <Bar asset={this.state.asset} />
+        <Picker
+          handleChange={this.handleStateChange}
+          asset={this.state.asset}
+          yrs={this.state.yrs}
+          realData={masterFunction(
+            this.state.asset,
+            this.state.startingAmount,
+            this.state.yrs
+          )}
+        />
+
+       
+
+
+        <div className="center footer">
+          A project by Ben Matheson.
+  Historical market data is from Federal Reserve database in St. Louis (FRED) via NYU professor Aswath Damodaran. 1928 to 2017. Stocks represent ths S&P 500 including dividends. Bonds are represented by 10-year treasury bonds. Cash are three-month U.S. treasury bill. Assets are compounded annually. 
+        </div>
+
+
       </div>
     );
   }

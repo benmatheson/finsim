@@ -18,7 +18,7 @@ export default class Bar extends React.Component {
 		const alloDataArr = [bills, bonds, stocks];
 		// console.log(alloDataArr);
 
-		const barLength = 300;
+		const barLength = 600;
 
 		const scaleXBar = d3
 			.scaleLinear()
@@ -53,7 +53,7 @@ export default class Bar extends React.Component {
 				<rect
 					key={i}
 					width={scaleXBar(j)}
-					height={30}
+					height={5}
 					x={
 						i == 2
 							? barLength - scaleXBar(j)
@@ -89,7 +89,7 @@ export default class Bar extends React.Component {
 					className="mainSvg center"
 					preserveAspectRatio="xMidYMin"
 					width={barLength}
-					height={30}
+					height={5}
 				>
 					{barGenerate}
 				</svg>

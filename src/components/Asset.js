@@ -2,7 +2,7 @@ import React from "react";
 import * as d3 from "d3";
 import "../App.css";
 
-export default class Narrative extends React.Component {
+export default class Asset extends React.Component {
 	render() {
 		function setAssetAllocation(allocation) {
 			var stx = Math.floor(allocation) / 100;
@@ -22,14 +22,14 @@ export default class Narrative extends React.Component {
 		const alloOutN = setAssetAllocation(this.props.asset);
 
 		// console.table(this.props.realData);
-		const dataPositive = this.props.realData.filter(
-			(d, i) => d[d.length - 1] > d[0]
-		);
+		// const dataPositive = this.props.realData.filter(
+		// 	(d, i) => d[d.length - 1] > d[0]
+		// );
 
-		// console.table(dataPositive);
-		const dataPositiveLength = dataPositive.length;
-		const dataNegativeLength =
-			this.props.realData.length - dataPositiveLength;
+		// // console.table(dataPositive);
+		// const dataPositiveLength = dataPositive.length;
+		// const dataNegativeLength =
+		// 	this.props.realData.length - dataPositiveLength;
 
 		// console.log("THE LENGTH");
 		// console.log(dataPositiveLength);
@@ -58,27 +58,26 @@ export default class Narrative extends React.Component {
 		// const allocationDesc = allocationName(this.props.asset);
 
 		return (
-			<p className="center narrative">
+			<p >
 				<strong />
+				<span className="assetSpan">
+					<span className="uniqueSpan billsHighlight">
+						{parseFloat(alloOutN.bills).toFixed(1)}
+						%
+					</span>{" "}
+					treasury bills{" "}
+					<span className="uniqueSpan bondsHighlight">
+						{`${parseFloat(alloOutN.bonds).toFixed(1)}`}
+						%
+					</span>{" "}
+					bonds{" "}
+					<span className="uniqueSpan stocksHighlight">
+						{parseFloat(alloOutN.stocks).toFixed(1)}
+						%
+					</span>{" "}
+					stocks
+				</span>
 	
-				There have been
-				<span className="uniqueSpan">
-				
-					{this.props.realData.length}
-				</span>
-				unique
-				<span className="uniqueSpan">
-					{this.props.years}-year
-				</span>
-				periods since 1928.
-				<br />
-				<span className="uniqueSpan positive">
-					{dataPositiveLength} 
-				</span>{" "}
-				have seen positive returns, and {" "}
-				<span className="uniqueSpan negative">
-					{dataNegativeLength}
-				</span> {" "}of them negative returns.
 			</p>
 		);
 	}
