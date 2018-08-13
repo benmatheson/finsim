@@ -4,6 +4,7 @@ import Picker from "./components/Picker.js";
 import { devArrays, compound, masterFunction } from "./helper.js";
 import * as d3 from "d3";
 import "typeface-roboto";
+import "typeface-fira-mono";
 import Chart from "./components/LineChart";
 import Bar from "./components/Bar";
 import Narrative from "./components/Narrative";

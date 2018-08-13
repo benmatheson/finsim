@@ -8,6 +8,7 @@
     "react-dom": "^16.4.2",
     "react-scripts": "1.1.4",
     "roboto": "^0.8.2",
+    "typeface-fira-mono": "0.0.54",
     "typeface-roboto": "0.0.54"
   },
   "scripts": {

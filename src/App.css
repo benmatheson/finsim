@@ -6,9 +6,10 @@ body {
   background-color: whitesmoke;
   background-color: lightgray;
   background-color: #F9F9F9;
-  font-family: "roboto";
-  font-family: "fira code";
+  /*font-family: "roboto";*/
+  font-family: "fira mono";
   color: #666;
+  overflow-x: hidden;
 }
 
 h1 {
@@ -20,7 +21,7 @@ h1 {
 h2,
 h3 {
   font-family: "roboto";
-  /*font-family: "fira code";*/
+  font-family: "fira mono";
   line-height: 1;
 
   /*font-family: monospace;*/
@@ -30,7 +31,7 @@ h3 {
 }
 
 .axis {
-  font-family: "fira code";
+  font-family: "fira mono";
   /*stroke: gray;*/
   /*stroke: none;*/
   /*fill: gray;*/
@@ -359,7 +360,7 @@ input[type="range"]:focus::-ms-fill-upper {
   background-color: #fc8d59;
   background-color: #5596B1;
   background-color:#acca0c;
-  
+
   color: white;  padding: 1%;
 
 }
@@ -428,7 +429,7 @@ color: black;
 .subHeader {
   font-weight: 300;
   width: 50%;
-  font-size: 1.2rem;
+  font-size: .9rem;
   text-align: left;
 }
 
