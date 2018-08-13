@@ -28,7 +28,7 @@ import Asset from "./components/Asset";
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { asset: 50, yrs: 30, startingAmount: 10000, xy: {},finalValue:{} };
+    this.state = { asset: 50, yrs: 5, startingAmount: 10000, xy: {},finalValue:{} };
     // this.setTimeout = this.setTimeout.bind(this);
   }
 
@@ -80,7 +80,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>The Small Sample Size of Market History</h1>
+        <h1>Every Time Horizon</h1>
         <h3 className="center subHeader">
           Our modern financial markets are not very old. <br /><br />Explore 
           how every historical time period since 1928 compares to each other and differs among portfolios of assets. Each line

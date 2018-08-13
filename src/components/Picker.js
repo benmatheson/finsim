@@ -69,7 +69,7 @@ class Picker extends React.Component {
 						type="range"
 						name="points"
 						min="1"
-						defaultValue="30"
+						defaultValue="10"
 						step="1"
 						max="90"
 						onChange={this.onYears}
