@@ -65,7 +65,7 @@ export default class Asset extends React.Component {
 						{parseFloat(alloOutN.bills).toFixed(1)}
 						%
 					</span>{" "}
-					treasury bills{" "}
+					t-bills{" "}
 					<span className="uniqueSpan bondsHighlight">
 						{`${parseFloat(alloOutN.bonds).toFixed(1)}`}
 						%

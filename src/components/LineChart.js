@@ -47,7 +47,7 @@ export default class Chart extends React.Component {
 		const scaleX = d3
 			.scaleLinear()
 			.domain([0, dataAxis[0].length - 1])
-			.range([2, cWidth - 54]);
+			.range([2, cWidth - 25]);
 
 		const flattenedData = [].concat(...dataAxis);
 		const maxValue = Math.max(...flattenedData);
@@ -56,7 +56,7 @@ export default class Chart extends React.Component {
 		const scaleY = d3
 			.scaleLinear()
 			.domain([minValue, maxValue])
-			.range([300, 0]);
+			.range([260, 0]);
 
 		// // var node = this.refs.axisRef;
 		// const node = this.node;
@@ -236,7 +236,7 @@ export default class Chart extends React.Component {
 		const scaleX = d3
 			.scaleLinear()
 			.domain([1, data[0].length])
-			.range([2, cWidth - 54]);
+			.range([2, cWidth - 25]);
 
 		const scaleY = d3
 			.scaleLinear()

@@ -78,7 +78,7 @@ export default class Narrative extends React.Component {
 				have seen positive returns, and {" "}
 				<span className="uniqueSpan negative">
 					{dataNegativeLength}
-				</span> {" "}of them negative returns.
+				</span> {" "}have seen negative returns.
 			</p>
 		);
 	}
