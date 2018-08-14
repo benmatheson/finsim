@@ -153,7 +153,7 @@ export default class Chart extends React.Component {
 		const coords = {
 			pageX: e.pageX,
 			clientX: e.target.getBoundingClientRect().x,
-			clientXm: e.clientX - 300,
+			clientXm: e.clientX - e.clientX/2,
 			// paged3X: ,
 			clientYm: e.clientY,
 			// clientY: e.target.getBoundingClientRect().y,

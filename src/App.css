@@ -56,7 +56,7 @@ h3 {
 }*/
 
 .axisY {
-  transform: translateX(92%);
+  transform: translateX(95%);
 }
 
 .axisX {
@@ -184,6 +184,9 @@ h3 {
 .sliderContainer h3 {
   font-size: 1rem;
 }
+
+
+
 
 input {
   display: block;
@@ -402,11 +405,13 @@ input[type="range"]:focus::-ms-fill-upper {
 }
 
 .negative {
-  background-color: salmon;
+  /*background-color: salmon;*/
+  color: salmon;
 }
 
 .positive {
-  background-color: lightgreen;
+color:#4dabc7;
+  /*background-color: lightgreen;*/
   /*background-color: #4da  bc7;*/
 }
 
@@ -586,6 +591,10 @@ font-weight: 900;
 font-size: .7rem;
 color: black;
 
+}
+
+.axisY {
+  transform: translateX(92%);
 }
 
 .sliderContainer h3 {
