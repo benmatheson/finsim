@@ -37,7 +37,7 @@ export default class Chart extends React.Component {
 		// height = h - margin.top - margin.bottom;
 
 		if (current_width < 668) {
-			cWidth = current_width;
+			cWidth = current_width-10;
 		} else {
 			cWidth = 800;
 		}
@@ -206,7 +206,7 @@ export default class Chart extends React.Component {
 			// height = h - margin.top - margin.bottom;
 
 			if (current_width < 668) {
-				cWidth = current_width;
+				cWidth = current_width-10;
 			} else {
 				cWidth = 800;
 			}
