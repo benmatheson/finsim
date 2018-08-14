@@ -65,25 +65,64 @@ h3 {
 
 .lineStyle {
   /*stroke-color: salmon;*/
-  opacity: 0.3;
+  opacity: 0.2;
   stroke-width: 2.5px;
   fill: none;
   /*stroke-dasharray: 1;*/
   /*fill: red;*/
   stroke-linecap: round;
   stroke: #4dabc7;
+  /*stroke: salmon;*/
   /*stroke: #1E6254;*/
 /*  stroke: green;
   stroke: navy;
   stroke: purple;*/
   cursor: crosshair;
-    transition: ease 0.3s all;
+  /*transition: ease 0.2s all;*/
+  animation: test 1s ease;
+mix-blend-mode: color-burn;
+mix-blend-mode: multiply;
+/*mix-blend-mode:screen;*/
+/*mix-blend-mode: difference;
+mix-blend-mode: exclusion;
+mix-blend-mode: screen;*/
+
+
+
+
+}
+
+
+
+@keyframes test {
+
+from{
+
+  stroke-width: 5px;
+filter: invert(70%);
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 900;
+
+} 
+
+to{
+
+  stroke-width: 2.5px;
+    stroke-dashoffset: 0;
+      stroke-dashoffset:  0;
+
+
+/*filter: saturate(200%);*/
+} 
+
 
 }
 
 .lineStyleMedian {
   /*stroke-color: /;*/
   opacity: 0.2;
+  mix-blend-mode: multiply;
+
   stroke-width: 2.5px;
   fill: none;
   /*fill: red;*/
@@ -153,6 +192,7 @@ h3 {
   display: block;
   height: auto;
   cursor: crosshair;
+    isolation: isolate; 
 
   /*background-color: white;*/
 }
@@ -583,6 +623,9 @@ transform: scale(1, 1);
   padding-right: 0.5%;
   border-radius: 3px;
 }
+
+
+
 
 
 .choose {
