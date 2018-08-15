@@ -47,7 +47,7 @@ export default class Chart extends React.Component {
 		const scaleX = d3
 			.scaleLinear()
 			.domain([0, dataAxis[0].length - 1])
-			.range([2, cWidth - 25]);
+			.range([2, cWidth - 30]);
 
 		const flattenedData = [].concat(...dataAxis);
 		const maxValue = Math.max(...flattenedData);
@@ -158,7 +158,9 @@ export default class Chart extends React.Component {
 			clientYm: e.clientY,
 			// clientY: e.target.getBoundingClientRect().y,
 			clientYoffSet: e.pageY - document.getElementById("dog").offsetTop,
-			yeers: e.target.getAttribute("yeers")
+			yeers: e.target.getAttribute("yeers"),
+			finalValue: e.target.getAttribute("finalValue"),
+			cagr: e.target.getAttribute("cagr")
 		};
 		//
 		// const siblings = document// const displayYears = this.state.
@@ -236,7 +238,7 @@ export default class Chart extends React.Component {
 		const scaleX = d3
 			.scaleLinear()
 			.domain([1, data[0].length])
-			.range([2, cWidth - 25]);
+			.range([2, cWidth - 30]);
 
 		const scaleY = d3
 			.scaleLinear()
@@ -266,6 +268,14 @@ export default class Chart extends React.Component {
 			} else {
 				style1 = "lineStyleMedian";
 			}
+
+			const exp = 1/calculatedYears;
+			console.log(exp);
+			const final = j[j.length-1]; 
+
+			console.log(final);
+			const cagrCalc = (final/10000)**exp-1;
+			console.log(cagrCalc);
 			return (
 				<path
 					// onMouseOver={this.handleHover.bind(this)}
@@ -275,6 +285,7 @@ export default class Chart extends React.Component {
 					yeers={`${1928 + i} to ${1927+
 						calculatedYears+i}  `}
 					className={style1}
+					cagr={cagrCalc*100}
 					d={line(j)}
 				/>
 			);
@@ -352,11 +363,37 @@ export default class Chart extends React.Component {
 							className="toolTipText"
 						>
 							{
-								(this.props.xy.yeers = !null
+								(this.props.xy.yeers != null
 									? this.props.xy.yeers
-									: "yo")
-							} {this.props.finalValue}
-						</text>
+									: " ")}
+
+								</text>
+
+
+
+						
+<text
+
+x={this.props.xy.clientXm}
+							// x={
+							// 	this.props.xy.clientX < cWidth / 2
+							// 		? this.props.xy.clientX
+							// 		: this.props.xy.clientXm -
+							// 		  this.props.xy.clientX
+							// }
+							y={
+								this.props.xy.clientYm / 2 +14
+								// 10
+							}
+							className="toolTipTextItal"
+
+							>
+								{(this.props.xy.cagr != null
+									? `${parseFloat (this.props.xy.cagr).toFixed(3)}% annualized`
+									: " ")
+
+	} </text>
+						
 					</g>
 					<g className="axis axisX" id="g1" />
 					<g className="axis axisY" id="g2" />

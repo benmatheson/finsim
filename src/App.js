@@ -82,10 +82,9 @@ export default class App extends Component {
       <div className="App">
         <h1>Every Time Horizon</h1>
         <h3 className="center subHeader">
-          Our modern financial markets are not very old. <br /><br />Explore 
-          how every historical time period since 1928 compares to each other and differs among portfolios of assets. Each line
-          represents the <strong>performance of $10,000</strong> over every possible time period
-          of <strong>a given length.</strong>
+          Our modern financial markets are not very old. <br /><br />Each line
+          represents the <strong>performance of $10,000</strong> during all <strong>{91-this.state.yrs}</strong> historic periods of
+          of <strong>{this.state.yrs} years</strong>. Adjust the period length and asset allocation with the sliders below.
         </h3>
 
      
@@ -128,7 +127,7 @@ export default class App extends Component {
 
         <div className="center footer">
           A project by Ben Matheson.
-  Historical market data is from Federal Reserve database in St. Louis (FRED) via NYU professor Aswath Damodaran. 1928 to 2017. Stocks represent ths S&P 500 including dividends. Bonds are represented by 10-year treasury bonds. Cash are three-month U.S. treasury bill. Assets are compounded annually. 
+  Historical market data is from Federal Reserve database in St. Louis (FRED) via NYU professor Aswath Damodaran. 1928 to 2017. Stocks represent the S&P 500 including dividends. Bonds are represented by 10-year treasury bonds. Cash is represented by three-month U.S. treasury bill. Assets are compounded annually. There is no adjustment for inflation here.  
         </div>
 
 
