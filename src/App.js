@@ -83,7 +83,7 @@ export default class App extends Component {
         <h1>Every Time Horizon</h1>
         <h3 className="center subHeader">
           Our modern financial markets are not very old. <br /><br />Each line
-          represents the <strong>performance of $10,000</strong> during all <strong>{91-this.state.yrs}</strong> historic periods of
+          represents the <strong>performance of $10,000</strong> during all <strong>{91-this.state.yrs}</strong> historic periods
           of <strong>{this.state.yrs} years</strong>. Adjust the period length and asset allocation with the sliders below.
         </h3>
 

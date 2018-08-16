@@ -78,7 +78,7 @@ h3 {
   stroke: navy;
   stroke: purple;*/
   cursor: crosshair;
-  /*transition: ease 0.2s all;*/
+  transition: ease 0.2s all;
   /*animation: test 1s ease;*/
 mix-blend-mode: color-burn;
 mix-blend-mode: multiply;
@@ -128,7 +128,7 @@ to{
   /*cursor: cell;*/
   /*cursor: move;*/
   cursor: crosshair;
-    transition: ease 0.3s all;
+    transition: ease 0.2s all;
 
 }
 
@@ -150,7 +150,7 @@ to{
   opacity: 0.9;
   stroke-width: 3px;
   fill: none;
-  transition: ease 0.2s all;
+  transition: ease 0.17s all;
 }
 
 .axis path {
@@ -427,6 +427,12 @@ input[type="range"]:focus::-ms-fill-upper {
 .assetSpan {
   font-size: .8rem;
   color: black;
+}
+
+.justin {
+
+text-align: justify;
+
 }
 .stocksHighlight {
   background-color: #fc8d59;
