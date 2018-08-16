@@ -434,6 +434,15 @@ input[type="range"]:focus::-ms-fill-upper {
 text-align: justify;
 
 }
+
+.xlabel{
+
+font-size: .7rem;
+margin-top: -1%;
+font-style: italic;
+
+
+}
 .stocksHighlight {
   background-color: #fc8d59;
   background-color: #5596B1;

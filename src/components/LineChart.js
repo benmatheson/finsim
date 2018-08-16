@@ -398,6 +398,7 @@ x={this.props.xy.clientXm}
 					<g className="axis axisX" id="g1" />
 					<g className="axis axisY" id="g2" />
 				</svg>
+				<p className="xlabel">Years Held </p>
 			</div>
 		);
 	}
