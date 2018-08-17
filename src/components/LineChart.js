@@ -88,9 +88,9 @@ export default class Chart extends React.Component {
 		const selector = document.querySelectorAll("path");
 		// console.log(selector);
 
-		if (e.target.hasAttribute("key2")) {
+		// if (e.target.hasAttribute("key2")) {
 			selector.forEach(d => d.classList.remove("gray"));
-		}
+		// }
 
 		selector.forEach(d => d.classList.remove("highlight"));
 	}
@@ -100,7 +100,7 @@ export default class Chart extends React.Component {
 		const selector = chart.querySelectorAll("path");
 		// console.log("GOING IN");
 
-		selector.forEach(d => d.classList.add("gray"));
+		// selector.forEach(d => d.classList.add("gray"));
 
 		// selector.forEach(d => d.classList.remove("highlight"));
 	}
@@ -129,9 +129,11 @@ export default class Chart extends React.Component {
 		// const selector = document.querySelectorAll("path");
 		console.log(selector);
 
-		if (e.target.hasAttribute("key2")) {
-			selector.forEach(d => d.classList.add("gray"));
-		}
+			// selector.forEach(d => d.classList.add("gray"));
+
+		// if (e.target.hasAttribute("key2")) {
+		// 	selector.forEach(d => d.classList.add("gray"));
+		// }
 
 		const currentIndex = e.target.getAttribute("key2");
 		// console.log("urrentIndex");

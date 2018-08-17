@@ -123,8 +123,9 @@ h3 {
 
 .lineStyle {
   /*stroke-color: salmon;*/
-  opacity: 0.2;
+  opacity: 0.3;
   stroke-width: 2.5px;
+  stroke-width:4px;
   fill: none;
   /*stroke-dasharray: 1;*/
   /*fill: red;*/
@@ -136,8 +137,8 @@ h3 {
   stroke: navy;
   stroke: purple;*/
   cursor: crosshair;
-  transition: ease 0.2s all;
-  /*animation: test 1s ease;*/
+/*  transition: ease 0.2s all;
+*/  /*animation: test 1s ease;*/
 mix-blend-mode: color-burn;
 mix-blend-mode: multiply;
 /*mix-blend-mode:screen;*/
@@ -175,10 +176,11 @@ to{
 
 .lineStyleMedian {
   /*stroke-color: /;*/
-  opacity: 0.2;
+  opacity: 0.3;
   mix-blend-mode: multiply;
 
   stroke-width: 2.5px;
+  stroke-width: 4px;
   fill: none;
   /*fill: red;*/
   stroke: purple;
@@ -186,7 +188,7 @@ to{
   /*cursor: cell;*/
   /*cursor: move;*/
   cursor: crosshair;
-    transition: ease 0.2s all;
+    /*transition: ease 0.2s all;*/
 
 }
 
@@ -200,15 +202,19 @@ to{
   stroke-linecap: round;
   stroke: gray;
   cursor: crosshair;
-  transition: ease 0.3s all;
+  /*transition: ease 0.3s all;*/
 }
 
 .highlight {
   /*stroke-color: salmon;*/
-  opacity: 0.9;
-  stroke-width: 3px;
+  opacity: 1;
+/*filter: contrast(200%);*/
+  stroke-width: 5px;
   fill: none;
-  transition: ease 0.17s all;
+  /*mix-blend-mode: darken;*/
+  /*stroke: #eefd00;*/
+  /*z-index: 100;*/
+  transition: ease 0.15s all;
 }
 
 .axis path {
@@ -235,6 +241,8 @@ to{
   background-color: rgba(155, 255, 255, 0.7);
   /*text-decoration: underline;*/
   font-weight: 900;
+    transition: all ease 1.3s;
+
   /*font: italic 13px sans-serif;*/
   /*color: blue;*/
 }
@@ -381,7 +389,25 @@ input[type="range"]::-webkit-slider-thumb {
   cursor: ew-resize;
   -webkit-appearance: none;
   margin-top: -13.85px;
+  transition: all ease .2s;
 }
+
+input[type="range"]::-webkit-slider-thumb:hover{
+
+  height: 34px;
+  width: 34px;
+  border-radius: 17px;
+  border: 1.9px solid #333;
+  margin-top: -15.85px;
+
+}
+
+
+
+
+
+
+
 input[type="range"]:focus::-webkit-slider-runnable-track {
   background: rgba(56, 56, 56, 0.19);
 }
@@ -397,15 +423,26 @@ input[type="range"]::-moz-range-track {
 }
 input[type="range"]::-moz-range-thumb {
   box-shadow: 0.5px 0.5px 0.6px #000000, 0px 0px 0.5px #0d0d0d;
-  border: 1.2px solid rgba(26, 0, 0, 0);
+  border: 1.2px solid #333;
   height: 30px;
   width: 30px;
   border-radius: 15px;
   background: #ffffff;
   /*background: black;*/
+  transition: all ease .2s;
 
   cursor: ew-resize;
 }
+input[type="range"]::-moz-range-thumb:hover {
+
+  height: 34px;
+  width: 34px;
+  border-radius: 17px;
+  border: 1.9px solid #333;
+
+}
+
+
 input[type="range"]::-ms-track {
   width: 100%;
   height: 2.7px;
