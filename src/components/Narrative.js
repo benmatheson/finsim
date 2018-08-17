@@ -57,6 +57,34 @@ export default class Narrative extends React.Component {
 
 		// const allocationDesc = allocationName(this.props.asset);
 
+
+
+
+
+
+		// #####Cacluate the average return. 
+
+console.log("this.props.realData");
+const averageData= this.props.realData;
+
+	const calculatedReturns=  averageData.map((d,i)=>{
+
+			const exp = 1/this.props.years;
+			const final = d[d.length-1]; 
+			const cagrCalc = (final/10000)**exp-1;
+			// console.log(cagrCalc);
+			return cagrCalc
+
+		})
+
+	console.log("calculatedReturns ");
+	console.log(calculatedReturns);
+	console.log("Returns ");
+	const calculatedAverage = ((calculatedReturns.reduce((current,tally)=>current+tally,0))/this.props.realData.length)*100
+
+console.log("calculatedAverage ");
+	console.log(calculatedAverage);
+
 		return (
 			<p className="center narrative">
 				<strong />
@@ -71,14 +99,14 @@ export default class Narrative extends React.Component {
 					{this.props.years}-year
 				</span>
 				periods since 1928.
-				<br />
+			
 				<span className="uniqueSpan positive">
 					{dataPositiveLength} 
-				</span>{" "}
-				have seen positive returns, and {" "}
+				</span>
+				have seen positive returns, and 
 				<span className="uniqueSpan negative">
 					{dataNegativeLength}
-				</span> {" "}have seen negative returns.
+				</span>have seen negative returns. The average annualized return has been<span className="uniqueSpan">{calculatedAverage.toFixed(2)}</span>percent.
 			</p>
 		);
 	}

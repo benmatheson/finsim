@@ -71,8 +71,8 @@ export default class Chart extends React.Component {
 
 	componentDidMount() {
 		this.renderAxis();
-		console.log("RENDER AXIS mtehod");
-		console.log(this.renderAxis);
+		// console.log("RENDER AXIS mtehod");
+		// console.log(this.renderAxis);
 	}
 	componentDidUpdate() {
 		this.renderAxis();
@@ -86,7 +86,7 @@ export default class Chart extends React.Component {
 
 	handleMouseOut(e) {
 		const selector = document.querySelectorAll("path");
-		console.log(selector);
+		// console.log(selector);
 
 		if (e.target.hasAttribute("key2")) {
 			selector.forEach(d => d.classList.remove("gray"));
@@ -98,7 +98,7 @@ export default class Chart extends React.Component {
 	handleMouseIn(e) {
 		const chart = document.querySelector("#dog");
 		const selector = chart.querySelectorAll("path");
-		console.log("GOING IN");
+		// console.log("GOING IN");
 
 		selector.forEach(d => d.classList.add("gray"));
 
@@ -109,15 +109,15 @@ export default class Chart extends React.Component {
 		// console.log(e.target.current.value);
 		// console.log("*****************************HOVERING");
 		// console.log(e.relatedTarget.getAttribute("yeers"));
-		console.log("getBoundingClientRect");
+		// console.log("getBoundingClientRect");
 		e.preventDefault();
-		console.log(e.target.getBoundingClientRect());
-		console.log(e.target.getBoundingClientRect().x);
-		console.log(e.target.getBoundingClientRect().y);
-		console.log("cient left");
-		console.log(e.target.getBoundingClientRect().left);
-		console.log("cient top");
-		console.log(e.target.getBoundingClientRect().top);
+		// console.log(e.target.getBoundingClientRect());
+		// console.log(e.target.getBoundingClientRect().x);
+		// console.log(e.target.getBoundingClientRect().y);
+		// console.log("cient left");
+		// console.log(e.target.getBoundingClientRect().left);
+		// console.log("cient top");
+		// console.log(e.target.getBoundingClientRect().top);
 
 		// console.log(e.pageX);
 		// console.log(e.pageY);
@@ -134,8 +134,8 @@ export default class Chart extends React.Component {
 		}
 
 		const currentIndex = e.target.getAttribute("key2");
-		console.log("urrentIndex");
-		console.log(currentIndex);
+		// console.log("urrentIndex");
+		// console.log(currentIndex);
 
 		// const selectorActive = document.querySelector(
 		// 	"path[key2 = " + currentIndex + "]"
@@ -145,8 +145,8 @@ export default class Chart extends React.Component {
 			`path[key2 = "${currentIndex}"]`
 		);
 
-		console.log("SELECTOR AACTI");
-		console.log(selectorActive);
+		// console.log("SELECTOR AACTI");
+		// console.log(selectorActive);
 		selectorActive.forEach(d => d.classList.remove("gray"));
 		selectorActive.forEach(d => d.classList.add("highlight"));
 
@@ -166,7 +166,7 @@ export default class Chart extends React.Component {
 		// const siblings = document// const displayYears = this.state.
 
 		this.props.lineHover(coords);
-		console.log(coords);
+		// console.log(coords);
 
 		document.getElemetB;
 
@@ -216,8 +216,8 @@ export default class Chart extends React.Component {
 
 		set_vars();
 
-		console.log("CWIDTH");
-		console.log(cWidth);
+	
+
 
 		// var resizeTimer;
 		// window.onresize = function(event) {
@@ -257,8 +257,8 @@ export default class Chart extends React.Component {
 			.x((d, i) => scaleX(i + 1))
 			.y((d, i) => scaleY(d));
 
-		console.log("this");
-		console.log(this);
+		// console.log("this");
+		// console.log(this);
 		const calculatedYears = this.props.years;
 		const lineMapped = data.map(function(j, i) {
 			let style1 = "trash";
@@ -270,12 +270,9 @@ export default class Chart extends React.Component {
 			}
 
 			const exp = 1/calculatedYears;
-			console.log(exp);
 			const final = j[j.length-1]; 
-
-			console.log(final);
 			const cagrCalc = (final/10000)**exp-1;
-			console.log(cagrCalc);
+			// console.log(cagrCalc);
 			return (
 				<path
 					// onMouseOver={this.handleHover.bind(this)}
@@ -314,7 +311,7 @@ export default class Chart extends React.Component {
 		);
 
 		d3.select("#dog").on("mousemove", function() {
-			console.log();
+			// console.log();
 		});
 
 		// console.log(dataSorted);
@@ -331,6 +328,14 @@ export default class Chart extends React.Component {
 
 		// console.log(xAxis);
 		// const xAxisCall = xAxis.call();
+
+
+
+
+
+
+
+
 		return (
 			<div>
 				<svg
@@ -389,7 +394,7 @@ x={this.props.xy.clientXm}
 
 							>
 								{(this.props.xy.cagr != null
-									? `${parseFloat (this.props.xy.cagr).toFixed(3)}% annualized`
+									? `${parseFloat (this.props.xy.cagr).toFixed(2)}% annualized`
 									: " ")
 
 	} </text>

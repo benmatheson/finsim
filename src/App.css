@@ -470,8 +470,8 @@ input[type="range"]:focus::-ms-fill-upper {
   /*background-color: lightgreen;*/
   font-weight: 900;
   font-size: 1.2rem;
-  padding-left: 0.5%;
-  padding-right: 0.5%;
+  padding-left: 1%;
+  padding-right: 1%;
   border-radius: 3px;
 }
 
@@ -534,6 +534,7 @@ font-style: italic;
 
 .positive {
 color:#4dabc7;
+color:#158fb3;
   /*background-color: lightgreen;*/
   /*background-color: #4da  bc7;*/
 }
