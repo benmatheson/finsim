@@ -220,7 +220,7 @@ stroke: #f5513e;
 .highlight {
   /*stroke-color: salmon;*/
   opacity: 1;
-  filter: brightness(1%);
+  /*filter: brightness(1%);*/
 
 /*filter: saturate(0);*/
   /*stroke-width: 7px;*/
