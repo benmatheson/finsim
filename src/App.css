@@ -123,7 +123,7 @@ h3 {
 
 .lineStyle {
   /*stroke-color: salmon;*/
-  opacity: 0.3;
+  opacity: 0.15;
   stroke-width: 2.5px;
   stroke-width:4px;
   fill: none;
@@ -152,6 +152,12 @@ mix-blend-mode: screen;*/
 }
 
 
+.lineStyle:hover{
+
+  stroke:#027ca0;
+
+
+}
 
 /*@keyframes test {
 
@@ -176,7 +182,7 @@ to{
 
 .lineStyleMedian {
   /*stroke-color: /;*/
-  opacity: 0.3;
+  opacity: 0.18;
   mix-blend-mode: multiply;
 
   stroke-width: 2.5px;
@@ -189,6 +195,12 @@ to{
   /*cursor: move;*/
   cursor: crosshair;
     /*transition: ease 0.2s all;*/
+
+}
+
+.lineStyleMedian:hover{
+
+stroke: #f5513e;
 
 }
 
@@ -208,11 +220,13 @@ to{
 .highlight {
   /*stroke-color: salmon;*/
   opacity: 1;
-/*filter: contrast(200%);*/
-  stroke-width: 5px;
+  filter: brightness(1%);
+
+/*filter: saturate(0);*/
+  /*stroke-width: 7px;*/
   fill: none;
-  /*mix-blend-mode: darken;*/
-  /*stroke: #eefd00;*/
+  /*transform: scale(1.02,1.02);*/
+
   /*z-index: 100;*/
   transition: ease 0.15s all;
 }
