@@ -58,9 +58,9 @@ export default class Asset extends React.Component {
 		// const allocationDesc = allocationName(this.props.asset);
 
 		return (
-			<p >
+			<div>
 				<strong />
-				<span className="assetSpan">
+				<span className="sliderFlex">
 					<span className="uniqueSpan billsHighlight">
 						{parseFloat(alloOutN.bills).toFixed(1)}
 						%
@@ -78,7 +78,7 @@ export default class Asset extends React.Component {
 					stocks
 				</span>
 	
-			</p>
+			</div>
 		);
 	}
 }

@@ -506,7 +506,12 @@ input[type="range"]:focus::-ms-fill-upper {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
+  
+
 }
+
+
 
 .sliderFlexItem {
   font-size: 0.8rem;
@@ -534,7 +539,7 @@ input[type="range"]:focus::-ms-fill-upper {
   padding: 0.8%;
 }
 .assetSpan {
-  font-size: .8rem;
+  font-size: .9rem;
   color: black;
 }
 
@@ -553,29 +558,66 @@ font-style: italic;
 
 }
 .stocksHighlight {
-  background-color: #fc8d59;
+/*  background-color: #fc8d59;
   background-color: #5596B1;
   background-color:#acca0c;
   background-color:#111;
+  background-color:#2c7fb8;*/
 
-  color: white;  
-  padding: 1%;
+  /*background-color: #ffffff;*/
+  /*background-color: gray;*/
+/*background-image: url("data:image/svg+xml,%3Csvg width='5' height='5' viewBox='0 0 40 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%232c7fb8' fill-opacity='0.98' fill-rule='evenodd'%3E%3Cpath d='M0 40L40 0H20L0 20M40 40V20L20 40'/%3E%3C/g%3E%3C/svg%3E");*/
+
+
+ /*background-color: #444;*/
+   padding: 1.2%;
+
+     border:  solid 3px  #2c7fb8;
+  border-radius: 5px;
+  /*padding: 0.8%;*/
+
+ color: #333;
 
 }
 
 .bondsHighlight {
-  background-color: #91bfdb;
-   padding: 1%;
+  /*background-color: #91bfdb;*/
+  /*background-color: #444;*/
+   padding: 1.4%;
+   padding: 1.2%;
 
- color: white;
-  background-color: #5C617F;
+     border:  solid 3px  #41b6c4;
+  border-radius: 5px;
+  /*padding: 0.8%;*/
+
+ color: #333;
+   /*color: #111;  */
+
+/*  background-color: #5C617F;
+  background-color: #41b6c4;*/
 }
 .billsHighlight {
-  background-color: #e0f3f8;
-   padding: 1%;
+  /*background-color:/ #e0f3f8;*/
+/*   padding: 1%;
+ background-color: #444;
+   padding: 1.4%;
 
- color: white;
-  background-color: #524159;
+     border:  solid 1px  #111;
+  border-radius: 5px;
+  /*padding: 0.8%;*/
+
+
+ /*color: white;*/
+
+ padding: 1.2%;
+
+     border:  solid 3px #a4d173;
+  border-radius: 5px;
+  /*padding: 0.8%;*/
+
+ color: #333;
+
+ 
 }
 
 .negative {
