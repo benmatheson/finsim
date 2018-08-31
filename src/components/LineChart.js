@@ -37,7 +37,7 @@ export default class Chart extends React.Component {
 		// height = h - margin.top - margin.bottom;
 
 		if (current_width < 668) {
-			cWidth = current_width-10;
+			cWidth = current_width - 10;
 		} else {
 			cWidth = 800;
 		}
@@ -54,7 +54,7 @@ export default class Chart extends React.Component {
 		const minValue = Math.min(...flattenedData);
 
 		const scaleY = d3
-			.scaleLinear()
+			.scaleLog()
 			.domain([minValue, maxValue])
 			.range([260, 0]);
 
@@ -66,7 +66,23 @@ export default class Chart extends React.Component {
 		// d3.select(node).call(xAxis);
 
 		d3.select("#g1").call(xAxis.ticks(5));
-		d3.select("#g2").call(yAxis.ticks(5).tickFormat(d3.format("$"+".2s")))
+		// d3.select("#g2").call(yAxis.ticks(2).tickFormat(d3.format("$.2s")));
+		d3.select("#g2").call(
+			yAxis
+				.tickValues([
+					7500,
+					10000,
+					20000,
+					50000,
+					100000,
+
+					5000000,
+					1000000,
+					10000000,
+					20000000
+				])
+				.tickFormat(d3.format("$.2s"))
+		);
 	};
 
 	componentDidMount() {
@@ -89,7 +105,7 @@ export default class Chart extends React.Component {
 		// console.log(selector);
 
 		// if (e.target.hasAttribute("key2")) {
-			selector.forEach(d => d.classList.remove("gray"));
+		selector.forEach(d => d.classList.remove("gray"));
 		// }
 
 		selector.forEach(d => d.classList.remove("highlight"));
@@ -122,14 +138,13 @@ export default class Chart extends React.Component {
 		// console.log(e.pageX);
 		// console.log(e.pageY);
 
-				const chart = document.querySelector("#dog");
+		const chart = document.querySelector("#dog");
 		const selector = chart.querySelectorAll("path");
-
 
 		// const selector = document.querySelectorAll("path");
 		console.log(selector);
 
-			// selector.forEach(d => d.classList.add("gray"));
+		// selector.forEach(d => d.classList.add("gray"));
 
 		// if (e.target.hasAttribute("key2")) {
 		// 	selector.forEach(d => d.classList.add("gray"));
@@ -155,7 +170,7 @@ export default class Chart extends React.Component {
 		const coords = {
 			pageX: e.pageX,
 			clientX: e.target.getBoundingClientRect().x,
-			clientXm: e.clientX - e.clientX/2,
+			clientXm: e.clientX - e.clientX / 2,
 			// paged3X: ,
 			clientYm: e.clientY,
 			// clientY: e.target.getBoundingClientRect().y,
@@ -210,16 +225,13 @@ export default class Chart extends React.Component {
 			// height = h - margin.top - margin.bottom;
 
 			if (current_width < 668) {
-				cWidth = current_width-10;
+				cWidth = current_width - 10;
 			} else {
 				cWidth = 800;
 			}
 		}
 
 		set_vars();
-
-	
-
 
 		// var resizeTimer;
 		// window.onresize = function(event) {
@@ -243,7 +255,7 @@ export default class Chart extends React.Component {
 			.range([2, cWidth - 30]);
 
 		const scaleY = d3
-			.scaleLinear()
+			.scaleLog()
 			.domain([minValue, maxValue])
 			.range([260, 0]);
 
@@ -271,20 +283,19 @@ export default class Chart extends React.Component {
 				style1 = "lineStyleMedian";
 			}
 
-			const exp = 1/calculatedYears;
-			const final = j[j.length-1]; 
-			const cagrCalc = (final/10000)**exp-1;
+			const exp = 1 / calculatedYears;
+			const final = j[j.length - 1];
+			const cagrCalc = (final / 10000) ** exp - 1;
 			// console.log(cagrCalc);
 			return (
 				<path
 					// onMouseOver={this.handleHover.bind(this)}
 					key={i}
 					key2={i}
-					finalValue={j[j.length-1]}
-					yeers={`${1928 + i} to ${1927+
-						calculatedYears+i}  `}
+					finalValue={j[j.length - 1]}
+					yeers={`${1928 + i} to ${1927 + calculatedYears + i}  `}
 					className={style1}
-					cagr={cagrCalc*100}
+					cagr={cagrCalc * 100}
 					d={line(j)}
 				/>
 			);
@@ -292,7 +303,6 @@ export default class Chart extends React.Component {
 
 		//calculated years is the number of years
 		//
-
 
 		// yeers={`${2017 - (90 - calculatedYears) + i} to ${2017 -
 		// 				(90 - calculatedYears) +
@@ -331,13 +341,6 @@ export default class Chart extends React.Component {
 		// console.log(xAxis);
 		// const xAxisCall = xAxis.call();
 
-
-
-
-
-
-
-
 		return (
 			<div>
 				<svg
@@ -369,19 +372,13 @@ export default class Chart extends React.Component {
 							}
 							className="toolTipText"
 						>
-							{
-								(this.props.xy.yeers != null
-									? this.props.xy.yeers
-									: " ")}
+							{this.props.xy.yeers != null
+								? this.props.xy.yeers
+								: " "}
+						</text>
 
-								</text>
-
-
-
-						
-<text
-
-x={this.props.xy.clientXm}
+						<text
+							x={this.props.xy.clientXm}
 							// x={
 							// 	this.props.xy.clientX < cWidth / 2
 							// 		? this.props.xy.clientX
@@ -389,18 +386,17 @@ x={this.props.xy.clientXm}
 							// 		  this.props.xy.clientX
 							// }
 							y={
-								this.props.xy.clientYm / 2 +14
+								this.props.xy.clientYm / 2 + 14
 								// 10
 							}
 							className="toolTipTextItal"
-
-							>
-								{(this.props.xy.cagr != null
-									? `${parseFloat (this.props.xy.cagr).toFixed(2)}% annualized`
-									: " ")
-
-	} </text>
-						
+						>
+							{this.props.xy.cagr != null
+								? `${parseFloat(this.props.xy.cagr).toFixed(
+										2
+								  )}% annualized`
+								: " "}{" "}
+						</text>
 					</g>
 					<g className="axis axisX" id="g1" />
 					<g className="axis axisY" id="g2" />
