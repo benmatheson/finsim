@@ -291,7 +291,7 @@ to{
 .sliderContainer {
   width: 40%;
 
-  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.17);
+  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
   margin-top: 15%;
   padding: 3% 4% 3% 4%;
@@ -539,43 +539,54 @@ input[type="range"]:focus::-ms-fill-upper {
 
   /*background-color: #444;*/
   padding: 1.5%;
+  font-weight: 200;
 
   /*border: solid 3px #2c7fb8;*/
-  border-radius: 10px;
+  border-radius: 5px;
   background-color: #2c7fb8;
   background-color: #f46d43;
   background-color: #ff9f82;
+  background-color: #0e4d64;
   /*padding: 0.8%;*/
+  width: 29%;
 
   color: #333;
+  color: whitesmoke;
 }
 
 .assetName {
-  font-weight: 300;
+  font-weight: 600;
   font-size: 0.9rem;
   color: #444;
   color: white;
   color: #222;
+  color: whitesmoke;
   padding: 2%;
   border-radius: 3px;
+  letter-spacing: 0.1rem;
+
   /*background-color: rgba(0, 0, 0, 0.12);*/
   /*background-color: rgba(255, 255, 255, 0.22);*/
 }
 .bondsHighlight {
   background-color: rgb(214, 250, 255);
   background-color: #ffffbf;
+  background-color: #137177;
   /*background-color: #444;*/
   padding: 1.4%;
   padding: 1.5%;
   /*box-shadow: 2px 2px 3px 2px #41b6c4;*/
 
   /*border: solid 3px #41b6c4;*/
-  border-radius: 10px;
+  border-radius: 5px;
   /*padding: 0.8%;*/
+  font-weight: 200;
 
   /*color: #333;*/
   /*color: #41b6c4;*/
   /*color: #111;  */
+  color: whitesmoke;
+  width: 27%;
 
   /*  background-color: #5C617F;
   background-color: #41b6c4;*/
@@ -598,11 +609,13 @@ input[type="range"]:focus::-ms-fill-upper {
   background-color: #a4d173;
   background-color: #abdda4;
   background-color: #abdda4;
+  background-color: #188977;
 
-  border-radius: 10px;
+  border-radius: 5px;
   /*padding: 0.8%;*/
-
-  color: #333;
+  font-weight: 200;
+  width: 27%;
+  color: whitesmoke;
 }
 
 .negative {
@@ -633,7 +646,7 @@ input[type="range"]:focus::-ms-fill-upper {
   font-size: 1.2rem;
   /*text-align: center;*/
 
-  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.17);
+  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
 
   padding: 2% 3% 2% 3%;
@@ -652,11 +665,12 @@ input[type="range"]:focus::-ms-fill-upper {
   font-size: 0.9rem;
   text-align: left;
 
-  box-shadow: 2px 1px 3px 2px rgba(0, 0, 0, 0.15);
+  box-shadow: 2px 2px 3px 2px rgba(0, 0, 0, 0.05);
   border-radius: 7px;
   /*margin-top:  15%;*/
   padding: 2% 5% 2% 5%;
   background-color: #ffffff;
+  color: #555;
 }
 
 /*.App-logo {
