@@ -89,7 +89,8 @@ export default class App extends Component {
         <h1>Every Time Horizon </h1>
         <h3 className="center subHeader">
           Our modern financial markets are not very old, but we can learn from
-          past performances of stocks, bonds, and cash. <br />
+          the past performance of different portfolios of stocks, bonds, and
+          cash across hundreds of holding periods. <br />
           <br />Each line represents the <strong>
             performance of $10,000
           </strong>{" "}
@@ -134,12 +135,13 @@ export default class App extends Component {
 
         <div className="center footer">
           <h3>About</h3>
-          A project by Ben Matheson. Historical market data is from Federal
-          Reserve database in St. Louis (FRED) via NYU professor Aswath
-          Damodaran. 1928 to 2017. Stocks represent the S&P 500 including
-          dividends. Bonds are represented by 10-year treasury bonds. Cash is
-          represented by three-month U.S. treasury bill. Assets are compounded
-          annually. There is no adjustment for inflation here.
+          A project by Ben Matheson. The historical market data is sourced the
+          from Federal Reserve database in St. Louis (FRED) via NYU professor
+          Aswath Damodaran, which runs from 1928 to 2017. Stocks represent the
+          S&P 500 including dividends. Bonds are represented by 10-year treasury
+          bonds. Cash is represented by three-month U.S. treasury bill. Assets
+          are compounded annually and displayed on a logorithmic y-scale. There
+          is no adjustment for inflation.
         </div>
       </div>
     );

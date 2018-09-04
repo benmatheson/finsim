@@ -95,9 +95,9 @@ class Picker extends React.Component {
 						/>
 
 						<div className="sliderFlex center">
-							<div className="sliderFlexItem">Bonds & Cash</div>
+							<div className="sliderFlexItem">Conservative</div>
 							<div className="sliderFlexItem">Blend</div>
-							<div className="sliderFlexItem">All Stocks</div>
+							<div className="sliderFlexItem">Aggressive</div>
 						</div>
 
 						<input
