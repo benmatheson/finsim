@@ -76,10 +76,10 @@ export default class Chart extends React.Component {
 					50000,
 					100000,
 
-					5000000,
+					500000,
 					1000000,
 					10000000,
-					20000000
+					18000000
 				])
 				.tickFormat(d3.format("$.2s"))
 		);

@@ -63,21 +63,17 @@ export default class Asset extends React.Component {
 				<span className="sliderFlex">
 					<span className="uniqueSpan billsHighlight">
 						{parseFloat(alloOutN.bills).toFixed(1)}
-						%
-					</span>{" "}
-					t-bills{" "}
+						%<span className="assetName"> t-bills</span>
+					</span>
 					<span className="uniqueSpan bondsHighlight">
 						{`${parseFloat(alloOutN.bonds).toFixed(1)}`}
-						%
+						% <span className="assetName">bonds</span>
 					</span>{" "}
-					bonds{" "}
 					<span className="uniqueSpan stocksHighlight">
 						{parseFloat(alloOutN.stocks).toFixed(1)}
-						%
+						% <span className="assetName">stocks</span>
 					</span>{" "}
-					stocks
 				</span>
-	
 			</div>
 		);
 	}

@@ -28,7 +28,13 @@ import Asset from "./components/Asset";
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = { asset: 50, yrs: 5, startingAmount: 10000, xy: {},finalValue:{} };
+    this.state = {
+      asset: 50,
+      yrs: 5,
+      startingAmount: 10000,
+      xy: {},
+      finalValue: {}
+    };
     // this.setTimeout = this.setTimeout.bind(this);
   }
 
@@ -82,12 +88,16 @@ export default class App extends Component {
       <div className="App">
         <h1>Every Time Horizon </h1>
         <h3 className="center subHeader">
-          Our modern financial markets are not very old. <br /><br />Each line
-          represents the <strong>performance of $10,000</strong> during all <strong>{91-this.state.yrs}</strong> historic periods
-          of <strong>{this.state.yrs} years</strong>. Adjust the period <strong>length</strong> and <strong>asset allocation</strong> with the sliders below and hover to view performance details.
+          Our modern financial markets are not very old, but we can learn from
+          past performances of stocks, bonds, and cash. <br />
+          <br />Each line represents the <strong>
+            performance of $10,000
+          </strong>{" "}
+          during all unique <strong>{91 - this.state.yrs}</strong> historic
+          periods of <strong>{this.state.yrs} years</strong>. Adjust the{" "}
+          <strong>period length</strong> and <strong>asset allocation</strong>{" "}
+          with the sliders below and hover to view performance details.
         </h3>
-
-     
 
         <Chart
           years={this.state.yrs}
@@ -102,7 +112,7 @@ export default class App extends Component {
         />
         <div />
 
-            <Narrative
+        <Narrative
           years={this.state.yrs}
           asset={this.state.asset}
           realData={masterFunction(
@@ -122,15 +132,15 @@ export default class App extends Component {
           )}
         />
 
-       
-
-
         <div className="center footer">
-          A project by Ben Matheson.
-  Historical market data is from Federal Reserve database in St. Louis (FRED) via NYU professor Aswath Damodaran. 1928 to 2017. Stocks represent the S&P 500 including dividends. Bonds are represented by 10-year treasury bonds. Cash is represented by three-month U.S. treasury bill. Assets are compounded annually. There is no adjustment for inflation here.  
+          <h3>About</h3>
+          A project by Ben Matheson. Historical market data is from Federal
+          Reserve database in St. Louis (FRED) via NYU professor Aswath
+          Damodaran. 1928 to 2017. Stocks represent the S&P 500 including
+          dividends. Bonds are represented by 10-year treasury bonds. Cash is
+          represented by three-month U.S. treasury bill. Assets are compounded
+          annually. There is no adjustment for inflation here.
         </div>
-
-
       </div>
     );
   }
